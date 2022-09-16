@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moxitech_Tasklist_Open_Source.TaskView">
+    <HorizontalStackLayout
+        HorizontalOptions="Fill"
+        VerticalOptions="Center"
+        Padding="10,0">
+        <CheckBox
+            IsChecked="False"
+            CheckedChanged="CheckBox_CheckedChanged">
+        </CheckBox>
+        
+        <Label
+            x:Name="LabelOfTask"
+            Margin="10,0"  LineBreakMode="WordWrap">
+        </Label>
+        <Button
+            Text="Изменить"
+            />
+        <Button
+            Text="Удалить"
+            Clicked="DeleteBtnClicked"
+            />
+
+
+
+    </HorizontalStackLayout>
+</ContentView>

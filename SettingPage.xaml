@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moxitech_Tasklist_Open_Source.SettingPage"
+             Title="SettingPage">
+    <VerticalStackLayout>
+        <Grid>
+        <Label 
+            Text="Настройки"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center" />
+
+
+        <Button
+            Text="Применить"
+            VerticalOptions="End"
+            HorizontalOptions="Start"
+            Padding="10"
+            />
+
+        <Button
+            VerticalOptions="End"
+            HorizontalOptions="End"
+            Padding="10"
+            Text="Назад"
+            Clicked="Back_Button_Clicked"
+            />
+        </Grid>
+    </VerticalStackLayout>
+    
+</ContentPage>
