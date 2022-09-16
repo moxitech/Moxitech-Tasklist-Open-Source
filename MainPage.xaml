@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Moxitech_Tasklist_Open_Source.MainPage">
+             x:Class="Moxitech_Tasklist_Open_Source.MainPage"
+             xmlns:controls ="clr-namespace:Moxitech_Tasklist_Open_Source">
     <ScrollView
         Padding="20,0"
         Margin="10">
         <Grid>
-            <VerticalStackLayout
+            <controls:MoxVerticalStackLayout
             Spacing="20"
             Padding="30,0"
             VerticalOptions="Start"
             HorizontalOptions="Center"
             x:Name="TaskList"
             >
-            </VerticalStackLayout>
+            </controls:MoxVerticalStackLayout>
             <Button
                Text="Настройки"
                HorizontalOptions="Start"

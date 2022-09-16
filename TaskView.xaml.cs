@@ -36,6 +36,10 @@ public partial class TaskView : ContentView
 		deleteThisDo(id);
 	}
 
+	public override string ToString()
+	{
+		return LabelOfTask.Text.ToString();
+	}
 	~TaskView()
 	{
 		Id--;

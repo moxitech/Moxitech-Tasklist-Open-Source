@@ -3,12 +3,14 @@ namespace Moxitech_Tasklist_Open_Source;
 
 public partial class MainPage : ContentPage
 {
+	public string content = FileSystem.Current.AppDataDirectory + "/content.txt";
+
 	public delegate void deleteDo(int id);
 	public MainPage()
 	{
 		InitializeComponent();
 		deleteDo deldo;
-		deldo = DeleteDo;
+		var deldo1 = DeleteDo;
 		var allTask = loadAllTask();
 		foreach (var item in allTask)
 		{
@@ -25,8 +27,9 @@ public partial class MainPage : ContentPage
             TaskList.Add(new TaskView(res, deldo));
 			
 		}
-	}
-	internal void DeleteDo(int id)
+
+    }
+    internal void DeleteDo(int id)
 	{
 		if(id == 0)
 		{
@@ -39,30 +42,51 @@ public partial class MainPage : ContentPage
 		await Shell.Current.GoToAsync("///SettingPage");
 	}
 
-
-	//public void flushAllChanges() { }
 	public List<TaskView> loadAllTask()
 	{
 		List<TaskView> taskList = new List<TaskView>();	
 		try
 		{
-			using (FileStream fs = new FileStream("./content.txt", FileMode.Open, FileAccess.ReadWrite))
+			using (FileStream fs = new FileStream(content, FileMode.Open, FileAccess.ReadWrite))
 			{
 				using (StreamReader sr = new StreamReader(fs))
 				{
                     var deldo = DeleteDo;
-                    TaskView taskView = new TaskView(sr.ReadLine(), deldo);
+					while (!sr.EndOfStream)
+					{
+						TaskView taskView = new TaskView(sr.ReadLine(), deldo);
+						taskList.Add(taskView);
+					}
 				}
 			}
 		}
 		catch(Exception e)
 		{
-            using (FileStream fs = new FileStream("./content.txt", FileMode.Create))
+            using (FileStream fs = new FileStream(content , FileMode.Create))
             {
 
             }
         }
 		return taskList;
-	} 
+	}
+    public void flushAllChanges(List<TaskView> taskViews)
+    {
+		using (FileStream fs = new FileStream(content, FileMode.OpenOrCreate))
+		{
+			using (StreamWriter sw = new StreamWriter(fs))
+			{
+				foreach (var item in taskViews)
+				{
+					sw.WriteLine(item.ToString());
+
+				}
+			}
+		}
+	}
+
+    ~MainPage()
+	{
+		flushAllChanges(TaskList.ToArrayView());		
+	}
 }
 

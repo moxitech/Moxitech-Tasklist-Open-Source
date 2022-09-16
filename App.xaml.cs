@@ -8,4 +8,14 @@ public partial class App : Application
 
 		MainPage = new AppShell();
 	}
+	//public override void CloseWindow(Window window)
+	//{
+	//	base.CloseWindow(window);
+	//}
+
+
+
+
+
+
 }
