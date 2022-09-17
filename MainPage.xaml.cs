@@ -37,12 +37,20 @@ public partial class MainPage : ContentPage
 		/*
 		 * Удаление задачи по id
 		 * **/
-		if(id == 0)
+		--id;
+		if (TaskList.Count == 0)
 		{
 			TaskList.Clear();
 		}
-		TaskList.RemoveAt(id);
-	}
+		else if (TaskList.Count == 1)
+		{
+			TaskList.Clear();
+		}
+		else
+		{
+			TaskList.RemoveAt(id);
+		}
+		}
 	private async void Setting_Button_Clicked(object sender, EventArgs e)
 	{
 		/*
@@ -72,7 +80,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 		}
-		catch(Exception e)
+		catch(Exception)
 		{
             using (FileStream fs = new FileStream(content , FileMode.Create))
             {

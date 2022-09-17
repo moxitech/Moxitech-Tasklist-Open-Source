@@ -23,7 +23,7 @@
                 Clicked="Setting_Button_Clicked">
             </Button>
             <Button
-                Text="Сохранить изменения"
+                Text="Сохранить"
                 HorizontalOptions="Center"
                 VerticalOptions="End"
                 Padding="10"

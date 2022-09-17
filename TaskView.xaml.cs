@@ -7,9 +7,9 @@ public partial class TaskView : ContentView
 	public bool TrueState = false;
 	private System.Action<int> deleteThisDo;
 	public static int Id = 0;
-	internal int id;
+	public int id { get; set; }
 
-	public TaskView(string Text, System.Action<int> deleteDo)
+    public TaskView(string Text, System.Action<int> deleteDo)
 	{
 		InitializeComponent();
 		this.Text = Text;
