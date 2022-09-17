@@ -23,6 +23,15 @@
                 Clicked="Setting_Button_Clicked">
             </Button>
             <Button
+                Text="Сохранить изменения"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Padding="10"
+                Clicked="Save_Button_Clicked">
+                
+                
+            </Button>
+            <Button
                Text="Добавить Задачу"
                HorizontalOptions="End"
                VerticalOptions="End"

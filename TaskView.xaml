@@ -2,28 +2,26 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Moxitech_Tasklist_Open_Source.TaskView">
-    <HorizontalStackLayout
+    <Grid
         HorizontalOptions="Fill"
-        VerticalOptions="Center"
-        Padding="10,0">
+        VerticalOptions="Center">
         <CheckBox
+            HorizontalOptions="Start"
             IsChecked="False"
             CheckedChanged="CheckBox_CheckedChanged">
         </CheckBox>
-        
         <Label
             x:Name="LabelOfTask"
-            Margin="10,0"  LineBreakMode="WordWrap">
+            HorizontalOptions="Center"
+            Margin="4,0"  LineBreakMode="NoWrap" MaxLines="5" >
         </Label>
-        <Button
-            Text="Изменить"
-            />
         <Button
             Text="Удалить"
             Clicked="DeleteBtnClicked"
-            />
+            HorizontalOptions="End">
+        </Button>
 
 
 
-    </HorizontalStackLayout>
+    </Grid>
 </ContentView>
