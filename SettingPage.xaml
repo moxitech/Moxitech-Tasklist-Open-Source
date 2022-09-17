@@ -4,14 +4,28 @@
              x:Class="Moxitech_Tasklist_Open_Source.SettingPage"
              Title="SettingPage">
     <VerticalStackLayout>
-        <Grid>
-        <Label 
+        <Grid Padding="30">
+            <Label 
             Text="Настройки"
             VerticalOptions="Start" 
             HorizontalOptions="Center" />
-
-
-        <Button
+            <Picker
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                x:Name="ColorPicker" Title="Выберите тему приложения"
+                SelectedIndexChanged="Color_Change_Picker"
+                >
+                <Picker.Items>
+                    <x:String>Темная тема</x:String>
+                    <x:String>Светлая тема</x:String>
+                    <x:String>Летняя тема</x:String>
+                    <x:String>Зимняя тема</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout>
+                
+            </StackLayout>
+            <Button
             Text="Применить"
             VerticalOptions="End"
             HorizontalOptions="Start"
